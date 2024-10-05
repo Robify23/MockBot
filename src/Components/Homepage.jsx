@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Homepage.css'; // Correct path for CSS
+import { Link } from 'react-router-dom';
 
 function App() {
   const [answerIndex, setAnswerIndex] = useState(null); // Initialize as null
@@ -33,8 +34,8 @@ function App() {
           <h1>MockBot</h1>
         </div>
         <div className="login-section">
-          <button className="signup-btn">Signup</button>
-          <button className="login-btn">Login</button>
+          <button className="signup-btn" ><Link to='/signup'>Signup</Link></button>
+          <button className="login-btn"><Link to='/signup'>Login</Link></button>
         </div>
       </header>
 
