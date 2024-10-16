@@ -23,14 +23,23 @@ body{
   /* App Name Styling */
   .app-name {
     font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: white;
-    transition: transform 0.5s ease-in-out;
+  font-weight: bold;
+ text-decoration: none;
+  
+  transition: all 0.4s ease-in-out;
+  transform-origin: center;
+  letter-spacing: 1.5px;
+ 
   }
+
   .app-name:hover{
-    transform: scale(1.1) rotate(8deg);
-    cursor: pointer;
+    text-decoration: none;
+  
+    font-size: 32px;
+    color: #FFFFFF;
+    transform: scale(1.2) rotate(5deg);
+    letter-spacing: 3px;
+    text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
   }
   
   /* Profile Section */
