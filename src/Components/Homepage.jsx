@@ -34,8 +34,8 @@ function App() {
           <h1>MockBot</h1>
         </div>
         <div className="login-section">
-          <button className="signup-btn" ><Link to='/signup'>Signup</Link></button>
-          <button className="login-btn"><Link to='/signup'>Login</Link></button>
+          <button className="signup-btn" ><Link style={{ textDecoration: 'none', color: 'inherit' }} to='/signup'>Signup</Link></button>
+          <button className="login-btn"><Link style={{ textDecoration: 'none', color: 'inherit' }} to='/signup'>Login</Link></button>
         </div>
       </header>
 
