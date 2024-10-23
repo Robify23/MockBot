@@ -16,6 +16,7 @@ body {
   height: 100vh;
   background: white;
   cursor: pointer;
+  perspective: 1000px; /* Perspective to give depth */
 }
 
 .app {
@@ -25,19 +26,29 @@ body {
   flex-direction: column;
 }
 
-
-/* Adding Gradient Background with Curve like aiApply */
+/* Adding Gradient Background with Glassy and Curvy Effect */
 .gradient-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #8E44AD, #D7BDE2 50%, #FFFFFF 100%);
-  clip-path: ellipse(100% 70% at 50% 30%);
+  background: linear-gradient(135deg, #8E44AD, #D7BDE2 60%, #FFFFFF 100%);
+  clip-path: ellipse(130% 85% at 100% 0); /* Enlarging the curve */
+  filter: blur(15px); /* Stronger blur for more appeal */
   z-index: -1;
+  opacity: 0.9; /* Increased opacity for a clearer glassy look */
+  animation: float 6s ease-in-out infinite; /* Floating animation */
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
 
 /* Smooth Transitions */
 * {
@@ -54,6 +65,7 @@ body {
   top: 0;
   width: 100%;
   z-index: 100;
+  backdrop-filter: blur(8px); /* Adds glassy effect */
 }
 
 .header .logo h1 {
@@ -71,6 +83,7 @@ body {
   transform: scale(1.2) rotate(5deg);
   letter-spacing: 3px;
   text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+  animation: float 3s ease-in-out infinite; /* Float animation on hover */
 }
 
 .login-section {
@@ -86,29 +99,32 @@ body {
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .signup-btn:hover, .login-btn:hover {
   background-color: #8E44AD;
   color: white;
+  transform: scale(1.05); /* Adds a floating effect on hover */
 }
 
 /* Main Section */
 .main {
   display: flex;
-  flex-grow: 1; /* Ensures main takes up remaining space */
+  flex-grow: 1;
   position: relative;
-  background-color: white; /* Sets background to white after the gradient */
+  background-color: white;
+  z-index: 2;
 }
 
 .left-side {
-  background-color: transparent; /* Keep it transparent to see the gradient */
+  background-color: transparent;
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 50px;
-  z-index: 2;
 }
 
 .left-side .content {
@@ -122,6 +138,7 @@ body {
   color: #8E44AD;
   margin-left: -60px;
   margin-top: -40px;
+  animation: float 4s ease-in-out infinite; /* Floating animation */
 }
 
 .left-side h1 span {
@@ -145,15 +162,19 @@ body {
   font-size: 18px;
   margin: 20px 0;
   margin-left: -55px;
+  transition: transform 0.4s ease-in-out;
+  box-shadow: 0 6px 15px rgba(50, 224, 196, 0.5);
 }
 
 .cta-btn:hover {
   background-color: #8E44AD;
   color: white;
+  transform: translateY(-10px); /* Creates a lifting hover effect */
+  box-shadow: 0 6px 20px rgba(50, 224, 196, 0.8);
 }
+
 .left-side, .right-side {
   background-color: transparent;
-  z-index: 2; /* Content remains above background */
 }
 
 /* Right Section */
@@ -167,8 +188,6 @@ body {
   z-index: 1;
 }
 
-
-/* Example for making the right-side content stay visible */
 .right-side::before {
   content: '';
   position: absolute;
@@ -179,12 +198,15 @@ body {
   background: linear-gradient(135deg, #8E44AD, #D7BDE2, #FFFFFF 50%);
   clip-path: ellipse(90% 85% at 100% 10%);
   z-index: -1;
+  filter: blur(15px); /* Enhances the glassy effect */
+  opacity: 0.8;
   transition: clip-path 0.5s ease;
+  animation: float 5s ease-in-out infinite; /* Adds floating motion */
 }
 
 /* Answer Box */
 .answer-box {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.8);
   color: #333;
   padding: 1.5rem;
   border-radius: 1rem;
@@ -197,7 +219,7 @@ body {
   position: relative;
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.6);
-  animation: fadeIn 1s ease-in-out;
+  animation: float 4s ease-in-out infinite; /* Adds floating animation */
 }
 
 .mcq-option {
