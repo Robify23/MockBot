@@ -1,16 +1,21 @@
 import React from 'react';
-import Homepage from './Components/Homepage';
 import './Components/Homepage.css';
-import Technicalmcqs from './Components/Technicalmcqs';
-import './Components/Technicalmcqs';
 import Home from './Pages/Home';
+import Signup from './Components/Signup';
+import Userpage from './Pages/Userpage';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      
-     <Home/>
-     
+      {/* Use BrowserRouter instead of Router */}
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/userpage" element={<Userpage />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
