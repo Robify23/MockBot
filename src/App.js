@@ -1,6 +1,5 @@
 import React from 'react';
 import './Components/Homepage.css';
-import './Components/AppDescription.css';
 import Home from './Pages/Home';
 import Signup from './Components/Signup';
 import Userpage from './Pages/Userpage';
