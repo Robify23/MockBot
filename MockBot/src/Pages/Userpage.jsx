@@ -56,11 +56,13 @@ const Userpage = () => {
                         icon={IQ}
                         title="IQ Test"
                         description="Test Your Smarts: How High Can You Score?"
+                        path='/iqquiz'
                     />
                     <Card 
                         icon={Emotional}
                         title="EQ Test"
                         description="Empathy Is Key: What’s Your Emotional Quotient?"
+                        path='/eqquiz'
                     />
                 </div>
             )}
@@ -96,11 +98,13 @@ const Userpage = () => {
                         icon={IQ}
                         title="IQ Test"
                         description="Test Your Smarts: How High Can You Score?"
+                        path='/iqquiz'
                     />
                     <Card 
                         icon={Emotional}
                         title="EQ Test"
                         description="Empathy Is Key: What’s Your Emotional Quotient?"
+                        path='/eqquiz'
                     />
                     <Card 
                         icon={PDF}
