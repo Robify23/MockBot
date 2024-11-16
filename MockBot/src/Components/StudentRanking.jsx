@@ -3,16 +3,16 @@ import { useParams, useNavigate } from "react-router-dom";
 import "./StudentRanking.css";
 
 const students = [
-    { name: "John Doe", score: 12500 },
-    { name: "Jane Smith", score: 10900 },
-    { name: "Alice Johnson", score: 9300 },
-    { name: "Robert Brown", score: 8700 },
-    { name: "Emily Davis", score: 6900 },
-    { name: "Michael Wilson", score: 5300 },
-    { name: "Sophia Taylor", score: 4100 },
-    { name: "Liam Anderson", score: 3700 },
-    { name: "Isabella Thomas", score: 2200 },
-    { name: "Oliver Jackson", score: 1400 },
+    { name: "John Doe", score: 12500, email: "john.doe@example.com", field: "Software Development" },
+    { name: "Jane Smith", score: 10900, email: "jane.smith@example.com", field: "Data Science" },
+    { name: "Alice Johnson", score: 9300, email: "alice.johnson@example.com", field: "Cybersecurity" },
+    { name: "Robert Brown", score: 8700, email: "robert.brown@example.com", field: "Cloud Computing" },
+    { name: "Emily Davis", score: 6900, email: "emily.davis@example.com", field: "AI & Machine Learning" },
+    { name: "Michael Wilson", score: 5300, email: "michael.wilson@example.com", field: "Networking" },
+    { name: "Sophia Taylor", score: 4100, email: "sophia.taylor@example.com", field: "UI/UX Design" },
+    { name: "Liam Anderson", score: 3700, email: "liam.anderson@example.com", field: "DevOps" },
+    { name: "Isabella Thomas", score: 2200, email: "isabella.thomas@example.com", field: "Database Management" },
+    { name: "Oliver Jackson", score: 1400, email: "oliver.jackson@example.com", field: "QA Testing" },
 ];
 
 const universities = [
@@ -56,6 +56,8 @@ const StudentRanking = () => {
                             <th>Rank</th>
                             <th>Student Name</th>
                             <th>Score</th>
+                            <th>Email</th>
+                            <th>Technical IT Field</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,6 +66,12 @@ const StudentRanking = () => {
                                 <td>{index + 1}</td>
                                 <td>{student.name}</td>
                                 <td>{student.score}</td>
+                                <td>
+                                    <a href={`mailto:${student.email}`} className="email-link">
+                                        {student.email}
+                                    </a>
+                                </td>
+                                <td>{student.field}</td>
                             </tr>
                         ))}
                     </tbody>
