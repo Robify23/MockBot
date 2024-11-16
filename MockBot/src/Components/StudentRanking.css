@@ -1,0 +1,175 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.body-student {
+    background-color: #000000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.ranking-container {
+    display: flex;
+    width: 150vw;
+    height: 100vh;
+    max-width: 1200px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.left-panel {
+    width: 30%;
+    background: linear-gradient(145deg, black, #5D009F);
+    color: #5D009F;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-right: 2px solid #000000;
+    position: relative;
+    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.university-name {
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 80px;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 1s ease forwards;
+}
+
+.university-rank {
+    font-size: 18px;
+    color: #ffffff;
+    margin-top: 10px;
+    font-style: italic;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.university-rank span {
+    font-weight: bold;
+    color: #ffd700;
+}
+
+/* Right panel styling */
+.right-panel {
+    width: 90%;
+    padding: 20px;
+    background-color: #fffefe;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.ranking-header {
+    font-size: 28px;
+    color: #5D009F;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ranking-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #5D009F;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+td {
+    background-color: #2a2a2a;
+    color: #ddd;
+    transition: background 0.3s ease;
+}
+
+tr:hover td {
+    background-color: #3d3d3d;
+    color: #fff;
+    transform: scale(1.02);
+}
+
+/* Subtle fade-in and slide-up animation */
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .ranking-container {
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    .left-panel, .right-panel {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .back-button {
+        font-size: 20px;
+    }
+
+    .university-name {
+        font-size: 26px;
+        margin-top: 15px;
+    }
+
+    .university-rank {
+        font-size: 16px;
+    }
+
+    .ranking-header {
+        font-size: 24px;
+    }
+
+    th, td {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
