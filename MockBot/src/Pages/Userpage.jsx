@@ -24,13 +24,13 @@ const Userpage = () => {
         <div className="sidebar">
             <div className="app-name"><Link style={{ textDecoration: 'none', color: 'inherit' }} to='/'>MockBot</Link></div>
 
-            <div className="profile-section">
+            <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/Userprofile'> <div className="profile-section">
                 <div className="profile-icon">M</div> 
                 <div className="profile-info">
                     <div className="profile-name">Maryam Malik</div>
                     <div className="profile-plan">Manage Account (Free Plan)</div>
                 </div>
-            </div>
+            </div></Link>
         
             <ul className="menu">
                 <li className='menu-item' onClick={()=>handleSectionChange('dashboard')}><FaClipboardList style={{marginRight:"10px"}}></FaClipboardList>Dashboard</li>

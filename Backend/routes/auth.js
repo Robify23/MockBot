@@ -129,4 +129,66 @@ router.post('/saveEqscore', async (req, res) => {
   }
 });
 
+// Fetch user profile
+router.get('/profile', async (req, res) => {
+  const token = req.headers.authorization?.split(' ')[1]; // Extract token from header
+  if (!token) {
+    return res.status(401).json({ message: 'Authentication token missing' });
+  }
+
+  try {
+    // Verify the token and extract the user ID
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await User.findById(decoded.userId); // Use userId from token
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    res.json({
+      username: user.username,
+      email: user.email,
+      technicalField: user.technicalField,
+      university: user.university,
+    });
+  } catch (error) {
+    console.error('Error in GET /profile:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+// Update user profile
+router.put('/profile', async (req, res) => {
+  const token = req.headers.authorization?.split(' ')[1]; // Extract token from header
+  if (!token) {
+    return res.status(401).json({ message: 'Authentication token missing' });
+  }
+
+  try {
+    // Verify the token and extract the user ID
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await User.findById(decoded.userId); // Use userId from token
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    const { username, email, university, technicalField } = req.body;
+
+    // Update user fields
+    user.username = username || user.username;
+    user.email = email || user.email;
+    user.university = university || user.university;
+    user.technicalField = technicalField || user.technicalField;
+
+    await user.save();
+
+    res.json({ message: 'Profile updated successfully', user });
+  } catch (error) {
+    console.error('Error in PUT /profile:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+
 module.exports = router;

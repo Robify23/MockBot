@@ -6,6 +6,8 @@
     background-color: #f5f5f5;
     min-height: 100vh;
     flex-wrap: wrap;
+   
+   
 }
 
 /* Profile card styling */
@@ -129,7 +131,9 @@
 }
 
 .edit-button {
-    grid-column: span 2;
+    display: flex;
+    justify-content: center; 
+    width: 200px;
     background-color: #5D009F;
     color: #ffffff;
     padding: 10px;
