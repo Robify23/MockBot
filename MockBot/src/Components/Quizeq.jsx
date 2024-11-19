@@ -93,7 +93,6 @@ function Quiz({ questions }) {
 
 export default Quiz;*/
 import React, { useState } from 'react';
-import axios from 'axios'; // Import axios for HTTP requests
 import './IQquiz.css';
 
 function Quiz({ questions }) {

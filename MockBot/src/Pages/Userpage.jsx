@@ -45,12 +45,53 @@ const Userpage = () => {
         </div>
 
         <div className='screen'>
+        
+                <div className="card-container">
+                  <Card 
+                        icon={techpic}
+                        title="Technical Test"
+                        description="Ace your interview with AI-generated quizzes and flaunt your scores to land a job!"
+                        path='/Technical'
+                    />
+                    <Card 
+                        icon={IQ}
+                        title="IQ Test"
+                        description="Test Your Smarts: How High Can You Score?"
+                        path='/iqquiz'
+                    />
+                    <Card 
+                        icon={Emotional}
+                        title="EQ Test"
+                        description="Empathy Is Key: What’s Your Emotional Quotient?"
+                        path='/eqquiz'
+                    />
+                    <Card 
+                        icon={PDF}
+                        title="PDF Conversion"
+                        description="Effortless PDF Conversion: Transform Your Files in Seconds!"
+                        path="/pdf"
+                    />
+                    <Card 
+                        icon={ATS}
+                        title="ATS Friendly"
+                        description="Pass the ATS and Impress the Hiring Team!"
+                        path="/ats"
+                    />
+                    <Card 
+                        icon={extra}
+                        title="Online Assessment"
+                        subtitle="Crack online tests instantly with powerful LLM vision technology"
+                        description=""
+                    />
+                </div>
+            
             {activeSection === 'interviewPreparation' && (
                 <div className="card-container">
                     <Card 
                         icon={techpic}
                         title="Technical Test"
                         description="Ace your interview with AI-generated quizzes and flaunt your scores to land a job!"
+                        path='/Technical'
                     />
                     <Card 
                         icon={IQ}
@@ -87,45 +128,7 @@ const Userpage = () => {
                     />
                 </div>
             )}
-             {activeSection === 'dashboard' && (
-                <div className="card-container">
-                  <Card 
-                        icon={techpic}
-                        title="Technical Test"
-                        description="Ace your interview with AI-generated quizzes and flaunt your scores to land a job!"
-                    />
-                    <Card 
-                        icon={IQ}
-                        title="IQ Test"
-                        description="Test Your Smarts: How High Can You Score?"
-                        path='/iqquiz'
-                    />
-                    <Card 
-                        icon={Emotional}
-                        title="EQ Test"
-                        description="Empathy Is Key: What’s Your Emotional Quotient?"
-                        path='/eqquiz'
-                    />
-                    <Card 
-                        icon={PDF}
-                        title="PDF Conversion"
-                        description="Effortless PDF Conversion: Transform Your Files in Seconds!"
-                        path="/pdf"
-                    />
-                    <Card 
-                        icon={ATS}
-                        title="ATS Friendly"
-                        description="Pass the ATS and Impress the Hiring Team!"
-                        path="/ats"
-                    />
-                    <Card 
-                        icon={extra}
-                        title="Online Assessment"
-                        subtitle="Crack online tests instantly with powerful LLM vision technology"
-                        description=""
-                    />
-                </div>
-            )}
+             
         </div>
       </>
     );

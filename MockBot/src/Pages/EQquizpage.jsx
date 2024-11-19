@@ -1,5 +1,5 @@
 import React from 'react';
-import Quiz from '../Components/IQquiz';
+import Quiz from '../Components/Quizeq';
 
 const questions = [
   {

@@ -130,7 +130,7 @@ const ATSResumeUpload = () => {
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3 }}
         >
-          <label htmlFor="resume">Upload Resume (PDF/Word):</label>
+          <label className="wordlabel" htmlFor="resume">Upload Resume (PDF/Word):</label>
           <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx" required />
         </motion.div>
 

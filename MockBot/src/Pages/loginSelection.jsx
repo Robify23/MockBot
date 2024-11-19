@@ -17,7 +17,7 @@ const SignupOptions = () => {
       </button>
 
       {showOptions && (
-        <div className="options">
+        <div className="optionuser">
           <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/signup'><div className="option-card candidate-card" onClick={() => alert("Candidate Login/Signup")}>
             <h2>Candidate</h2>
             <p>Prepare for interviews and get noticed by top companies.</p>

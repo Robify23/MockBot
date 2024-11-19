@@ -22,6 +22,20 @@
   .cardit.flip {
     transform: rotateY(90deg);
   }
+  .quiz-card{
+    width: 430px;
+    height: auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+  }
+  .quiz-card.flip{
+    transform: rotateY(90deg);
+  }
   
  
   h2 {
@@ -32,6 +46,7 @@
   
   
   p {
+    text-align: justify;
     font-size: 18px;
     color: #555;
   }
@@ -41,16 +56,19 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     margin-top: 20px;
+    
   }
   
   .option {
-    background-color: #5d009f;
+  
     color: white;
-    padding: 15px;
+    background-color: #5d009f ;
+    padding: 10px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+    
   }
   
   .option:hover {
@@ -58,7 +76,7 @@
   }
   
   .option.selected {
-    background-color: #3ac569;
+    background-color: #3ac569 !important;
   }
   
   /* Next button */
@@ -93,17 +111,32 @@
 
 /* Modal styles */
 .score-display {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background: rgba(0, 0, 0, 0.7); /* Dark background overlay */
   display: flex;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+ 
+}
+.score-dis{
+  color: black;
+  background: white; /* Dark background overlay */
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  flex-direction: column;
+  padding: 50px
+}
+.score-dis h3,h4{
+  margin: 10px;
+  color: black;
+  align-self: center;
+}
+.score-dis button{
+  margin: 10px;
 }
 
 .score {
@@ -121,7 +154,7 @@
   margin: 0 0 10px 0;
 }
 
-.retry-btn {
+.home {
   background: #5D009F;
   color: white;
   padding: 10px 20px;
@@ -130,6 +163,62 @@
   cursor: pointer;
 }
 
-.retry-btn:hover {
+.home:hover {
   background: #4a007d;
+}
+.question-image img {
+  max-width: 60%;
+  height: auto;
+  margin: 10px 0;
+}
+
+.qoptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.qoption {
+  cursor: pointer;
+  border: 2px solid transparent;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+.qoption:hover{
+  border-color: #5D009F;
+}
+.qoption.selected {
+  border-color:#218838;
+}
+
+.option-img {
+  max-width: 100px;
+  height: auto;
+}
+.front h2,p{
+  color: black
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.previous-btn{
+
+  margin:10px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.previous-btn[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
