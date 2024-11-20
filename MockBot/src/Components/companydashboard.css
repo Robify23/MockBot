@@ -1,6 +1,7 @@
 .sidebar-new {
+    position: fixed;  
     width: 22%;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     left: 0;
     top: 0;
@@ -12,13 +13,16 @@
   
   .app-name-new {
     font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 50px;
-    letter-spacing: 1.5px;
-    transition: all 0.4s ease-in-out;
+  font-weight: bold;
+  margin-bottom: 50px;
+ text-decoration: none;
+  transition: all 0.4s ease-in-out;
+  transform-origin: center;
+  letter-spacing: 1.5px;
   }
   
   .app-name-new:hover {
+    color: #FFFFFF;
     transform: scale(1.09) rotate(5deg);
     text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
   }
@@ -26,39 +30,69 @@
   .profile-section-new {
     display: flex;
     align-items: center;
-    background-color: white;
+    background-color: white; /* Adjust this based on the background you want */
     padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     border-radius: 8px;
     color: black;
+    font-family: 'Arial', sans-serif;
   }
+  .profile-section-new:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
   
   .profile-icon-new {
-    background-color: #ff6d00;
+    background-color: #ff6d00; /* Icon background color */
     width: 40px;
     height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
     margin-right: 10px;
+  }
+  .profile-icon-new:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    box-shadow: black;
   }
   
   .profile-info-new {
     display: flex;
     flex-direction: column;
   }
+  .profile-name-new {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .profile-plan-new {
+    font-size: 14px;
+    color: #b0b0b0;
+  }
   
   .menu-new {
     list-style-type: none;
     padding: 0;
+    width: 100%;
+  
+    text-align: left;
   }
   
   .menu-item-new {
+    width: 90%;
     font-size: 18px;
     margin: 20px 0;
     padding: 10px;
     cursor: pointer;
     color: white;
+   
   }
   
   .menu-item-new:hover {
@@ -68,22 +102,32 @@
   }
   
   /* Screen component */
+ 
   .screen-comp-new {
-    margin-left: 22%; /* Adjust based on sidebar width */
-    padding: 20px;
-    min-height: 100vh; /* Ensure full screen height */
-    overflow-y: auto; /* Allow scrolling if content overflows */
-    box-sizing: border-box;
-  }
+    
+    position: fixed;      
+    right: 0;             
+    top: 0;               
+    width: 1030px;       
+    height: 93vh;         
+    margin: 10px;         
+    display: flex;        
+    overflow-y: auto;     
+   
+    
+}
+
+
+
   .card-container-new {
+
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
     gap: 20px;
     padding: 20px;
     justify-items: center; /* Centers the items within each grid cell */
   }
-  /* University card */
-  /* University card */
+  
   .university-card-new {
     background: linear-gradient(140deg, black, #5D009F);
     border-radius: 8px;

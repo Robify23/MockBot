@@ -129,6 +129,60 @@ router.post('/saveEqscore', async (req, res) => {
   }
 });
 
+router.post('/saveIqscore', async (req, res) => {
+  const { score } = req.body;
+
+  // Assuming the token is passed as a Bearer token
+  const authHeader = req.headers.authorization;
+
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    return res.status(401).json({ message: 'Authorization token is missing or invalid' });
+  }
+
+  const token = authHeader.split(' ')[1];  // Extract the token part after 'Bearer'
+
+  try {
+    // Verify the token
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+    // Find the user by ID
+    const user = await User.findById(decoded.userId);
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    // Ensure the score is a number before pushing
+    const numericScore = parseFloat(score);  // Convert the score to a number
+
+    if (isNaN(numericScore)) {
+      return res.status(400).json({ message: 'Invalid score format' });
+    }
+
+    // Initialize eqScores if it doesn't exist
+    if (!user.iqScores) {
+      user.iqScores = [];
+    }
+
+    // Push the numeric score to the eqScores array
+    user.iqScores.push({ score: numericScore });
+
+    await user.save(); // Save the updated user document
+
+    console.log("Updated eqScores: ", user.iqScores);  // Debug: log the updated scores
+    res.json({ message: 'Score saved successfully' });
+  } catch (error) {
+    console.error('Error saving score:', error);
+
+    // Differentiate between different types of errors
+    if (error.name === 'JsonWebTokenError') {
+      return res.status(401).json({ message: 'Invalid token' });
+    }
+
+    res.status(500).json({ message: 'Error saving score' });
+  }
+});
+
 // Fetch user profile
 router.get('/profile', async (req, res) => {
   const token = req.headers.authorization?.split(' ')[1]; // Extract token from header
@@ -189,6 +243,32 @@ router.put('/profile', async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
+
+// Fetch user profile
+router.get('/profilename', async (req, res) => {
+  const token = req.headers.authorization?.split(' ')[1]; // Extract token from header
+  if (!token) {
+    return res.status(401).json({ message: 'Authentication token missing' });
+  }
+
+  try {
+    // Verify the token and extract the user ID
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await User.findById(decoded.userId); // Use userId from token
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    res.json({
+      username: user.username,
+    });
+  } catch (error) {
+    console.error('Error in GET /profile:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
 
 
 module.exports = router;

@@ -13,6 +13,12 @@ const userSchema = new mongoose.Schema({
       date: { type: Date, default: Date.now },
     },
   ],
+  iqScores: [
+    {
+      score: Number,
+      date: { type: Date, default: Date.now },
+    },
+  ],
 });
 
 

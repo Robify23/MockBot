@@ -61,7 +61,7 @@ body{
   
   /* Profile Icon Styling */
   .profile-icon {
-    background-color: #ff6d00; /* Icon background color */
+    background-color: #ff6d00; 
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -136,7 +136,7 @@ body{
   .card-container {
     display: flex;  
     width: 100%;
-    justify-content: space-around; /* Distribute space evenly */
+     /* Distribute space evenly */
     flex-wrap: wrap;              /* Allow wrapping of cards */
     margin: 5px;    
   }

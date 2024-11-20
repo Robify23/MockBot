@@ -76,7 +76,7 @@ import q11op3 from "../Pictures/q11o3.png";
 import q11op4 from "../Pictures/q11o4.png";
 import q11op5 from "../Pictures/q11o5.png";
 import q11op6 from "../Pictures/q11o6.png";
-import q12 from "../Pictures/questionfive.png";
+import q12 from "../Pictures/questiontwelve.png";
 import q12op1 from "../Pictures/q12o1.png";
 import q12op2 from "../Pictures/q12o2.png";
 import q12op3 from "../Pictures/q12o3.png";
@@ -109,7 +109,7 @@ const questions = [
       { src: q2op5, label: "Option 5" },
       { src: q2op6, label: "Option 6" },
     ],
-    correctAnswer: { src: option4q1, label: "Option 4" },
+    correctAnswer: { src: option4q1, label: "Option 5" },
   },
   {
     questionText: "Fill the following with the correct shape",
@@ -122,7 +122,7 @@ const questions = [
       { src: q3op5, label: "Option 5" },
       { src: q3op6, label: "Option 6" },
     ],
-    correctAnswer: { src: option4q1, label: "Option 4" },
+    correctAnswer: { src: option4q1, label: "Option 1" },
   },
   {
     questionText: "Fill the following with the correct shape",
@@ -135,7 +135,7 @@ const questions = [
       { src: q4op5, label: "Option 5" },
       { src: q4op6, label: "Option 6" },
     ],
-    correctAnswer: { src: option4q1, label: "Option 4" },
+    correctAnswer: { src: option4q1, label: "Option 2" },
   },
   {
     questionText: "Fill the following with the correct shape",
@@ -148,7 +148,7 @@ const questions = [
       { src: q5op5, label: "Option 5" },
       { src: q5op6, label: "Option 6" },
     ],
-    correctAnswer: { src: option4q1, label: "Option 4" },
+    correctAnswer: { src: option4q1, label: "Option 6" },
   },
   {
     questionText: "Fill the following with the correct shape",
@@ -161,7 +161,7 @@ const questions = [
       { src: q6op5, label: "Option 5" },
       { src: q6op6, label: "Option 6" },
     ],
-    correctAnswer: { src: option4q1, label: "Option 4" },
+    correctAnswer: { src: option4q1, label: "Option 3" },
   },
   {
     questionText: "Fill the following with the correct shape",
@@ -174,7 +174,7 @@ const questions = [
       { src: q7op5, label: "Option 5" },
       { src: q7op6, label: "Option 6" },
     ],
-    correctAnswer: { src: option4q1, label: "Option 4" },
+    correctAnswer: { src: option4q1, label: "Option 2" },
   },
   {
     questionText: "Fill the following with the correct shape",
@@ -187,7 +187,7 @@ const questions = [
       { src: q8op5, label: "Option 5" },
       { src: q8op6, label: "Option 6" },
     ],
-    correctAnswer: { src: option4q1, label: "Option 4" },
+    correctAnswer: { src: option4q1, label: "Option 1" },
   },
   {
     questionText: "Fill the following with the correct shape",
@@ -200,7 +200,7 @@ const questions = [
       { src: q9op5, label: "Option 5" },
       { src: q9op6, label: "Option 6" },
     ],
-    correctAnswer: { src: option4q1, label: "Option 4" },
+    correctAnswer: { src: option4q1, label: "Option 5" },
   },
   {
     questionText: "Fill the following with the correct shape",
@@ -213,7 +213,7 @@ const questions = [
       { src: q10op5, label: "Option 5" },
       { src: q10op6, label: "Option 6" },
     ],
-    correctAnswer: { src: option4q1, label: "Option 4" },
+    correctAnswer: { src: option4q1, label: "Option 6" },
   },
   {
     questionText: "Fill the following with the correct shape",
@@ -239,7 +239,7 @@ const questions = [
       { src: q12op5, label: "Option 5" },
       { src: q12op6, label: "Option 6" },
     ],
-    correctAnswer: "Option 4" ,
+    correctAnswer: { src: option4q1, label: "Option 5" },
   }
 ];
 

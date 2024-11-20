@@ -161,7 +161,10 @@ const handleSave = async () => {
 
 export default Userprofile;*/
 import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from "react-router-dom";
 import './Userprofile.css';
+
+;
 
 const Userprofile = () => {
   const [userInfo, setUserInfo] = useState({
@@ -173,9 +176,10 @@ const Userprofile = () => {
 
   const [isEditing, setIsEditing] = useState(false);
   const [loading, setLoading] = useState(false);
+  
 
   const token = localStorage.getItem('token'); // Assuming token is stored in localStorage
-
+const navigate = useNavigate()
   // Fetch user data
   useEffect(() => {
     const fetchUserData = async () => {
@@ -247,7 +251,9 @@ const Userprofile = () => {
 
   return (
     <div className="profile-page">
+       
       <div className="profile-card">
+
         <div className="profile-header">
           <div className="profile-circle">
             {userInfo.username[0]?.toUpperCase()}
@@ -257,6 +263,8 @@ const Userprofile = () => {
           <p className="profile-university">{userInfo.university}</p>
         </div>
         <a href="#!" className="profile-link">View Public Profile</a>
+        <button className='back' style={{bottom:'0px', margin:'20px', padding:"5px", width:"100px", background:"#5D009F", color:"white", borderRadius:"5px" }}>
+          <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/userpage'>back</Link></button>
       </div>
 
       <div className="settings-card">

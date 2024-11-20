@@ -7,6 +7,7 @@ import Nu from "../Pictures/Nust.jpeg";
 import bahria from '../Pictures/Bahria.jpeg';
 import lums from '../Pictures/Lums.jpeg';
 import nust from '../Pictures/Nust.jpeg';
+import { FaClipboardList, FaBook } from 'react-icons/fa';
 
 const Companydashboard = () => {
     const [activeSection, setActiveSection] = useState('dashboard');
@@ -32,7 +33,7 @@ const Companydashboard = () => {
 
     return (
         <>
-            <div className="sidebar-new">
+            <div className="sidebar-new" style={{position:"fixed"}}>
                 <div className="app-name-new">
                     <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/'>MockBot</Link>
                 </div>
@@ -41,21 +42,22 @@ const Companydashboard = () => {
                     <div className="profile-section-new">
                         <div className="profile-icon-new">M</div>
                         <div className="profile-info-new">
-                            <div className="profile-name-new">Maryam Malik</div>
+                            <div className="profile-name-new">Soft Code</div>
                             <div className="profile-plan-new">Manage Account (Free Plan)</div>
                         </div>
                     </div>
                 </Link>
 
                 <ul className="menu-new">
-                    <li className="menu-item-new" onClick={() => handleSectionChange('dashboard')}>Dashboard</li>
+                    <li className="menu-item-new" onClick={() => handleSectionChange('dashboard')}><FaClipboardList style={{ marginRight: "10px" }} />Dashboard</li>
                     <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/question-vault'>
                         <li className="menu-item-new" onClick={() => handleSectionChange('interviewPreparation')}>
-                            Question Vault
+                        <FaBook style={{ marginRight: "10px" }} />Question Vault
                         </li>
                     </Link>
                 </ul>
             </div>
+            <div className="scrolling">
             <div className="screen-comp-new">
                 {activeSection === 'dashboard' && (
                     <div className="card-container-new">
@@ -77,7 +79,7 @@ const Companydashboard = () => {
                         ))}
                     </div>
                 )}
-            </div>
+            </div></div>
         </>
     );
 };

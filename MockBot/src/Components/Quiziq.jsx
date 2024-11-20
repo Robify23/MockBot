@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import React, { useState } from 'react';
 import './IQquiz.css';
 
@@ -15,7 +15,7 @@ function Quiz({ questions }) {
 
   const handleNext = () => {
     if (selectedAnswer !== null) {
-      setTotalScore((prevScore) => prevScore + (selectedAnswer + 1));
+      setTotalScore((prevScore) => prevScore + (selectedAnswer));
     }
 
     setIsFlipping(true);
@@ -35,12 +35,45 @@ function Quiz({ questions }) {
     }, 600);
   };
 
-  const handleSubmit = () => {
-    if (selectedAnswer !== null) {
-      setTotalScore((prevScore) => prevScore + (selectedAnswer + 1));
-    }
+ const saveScore= async(score)=>{
+try{
+  console.log("score befor sending", score);
+  const token= localStorage.getItem('token');
+  const response = await fetch("http://localhost:5000/api/auth/saveIqscore",{
+    method: 'POST',
+    headers:{
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`,
+         
+    },
+    body: JSON.stringify({score}),
+  })
+const data = await response.json();
+if (response.ok) {
+  alert(data.message);
+} else {
+  alert(data.message);
+}
+}
+ catch (error) {
+console.error('Error saving score:', error);
+}
+ };
+
+  const handleSubmit = async () => {
+    // Calculate the score based on selected answers, including the last one
+    const score= (selectedAnswer)
+    setTotalScore((prevScore) => {
+      const finalScore = prevScore + score;
+
+      // Once the total score is updated, save it to the backend
+      saveScore(finalScore);
+
+      return finalScore; 
+    });
     setQuizFinished(true);
   };
+  
 
   const isLastQuestion = currentQuestion === questions.length - 1;
   const isFirstQuestion = currentQuestion === 0;
@@ -51,7 +84,7 @@ function Quiz({ questions }) {
         <div className="score-dis">
           <h3>Your Total Score:</h3>
           <h4>{totalScore}</h4>
-          <button className="home" >
+          <button className="home">
             <Link style={{ textDecoration: 'none', color: 'inherit' }} to="/userpage">Go Back Home</Link>
           </button>
         </div>
@@ -73,7 +106,7 @@ function Quiz({ questions }) {
               {questions[currentQuestion].options.map((option, index) => (
                 <div
                   key={index}
-                  className={`qoption ${selectedAnswer === index ? 'selected' : ''}`}
+                  className={`option ${selectedAnswer === index ? 'selected' : ''}`}
                   onClick={() => handleAnswer(index)}
                 >
                   <img src={option.src} alt={option.label} className="option-img" />
@@ -114,5 +147,3 @@ function Quiz({ questions }) {
 }
 
 export default Quiz;
-
-
