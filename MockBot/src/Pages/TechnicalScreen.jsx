@@ -21,7 +21,7 @@ function TechnicalScreen() {
       <header className="mock-header">
         <div className="mock-logo">
           <h1>
-            <Link style={{ textDecoration: "none", color: "inherit" }} to="/">
+            <Link style={{ textDecoration: "none", color: "inherit" }} to="/userpage">
               MockBot
             </Link>
           </h1>

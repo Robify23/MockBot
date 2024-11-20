@@ -129,7 +129,7 @@ function PdfComp() {
       setPdfUrl(data.result.FileUrl); // Make sure this matches your backend response structure
     } catch (error) {
       console.error("Error:", error.message);
-      alert("Failed to convert file. See console for details.");
+      alert("Failed to convert file Add docx file.");
     } finally {
       setIsLoading(false);
     }

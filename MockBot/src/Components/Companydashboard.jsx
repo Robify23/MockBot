@@ -1,13 +1,13 @@
 import { React, useState } from "react";
 import './companydashboard.css';
 import { Link } from 'react-router-dom';
-import riphahlogo from '../Pictures/Riphah.jpeg';
-import air from '../Pictures/Fast.jpeg';
-import Nu from "../Pictures/Nust.jpeg";
-import bahria from '../Pictures/Bahria.jpeg';
-import lums from '../Pictures/Lums.jpeg';
-import nust from '../Pictures/Nust.jpeg';
-import { FaClipboardList, FaBook } from 'react-icons/fa';
+import riphahlogo from '../Pictures/Riphah.png';
+import air from '../Pictures/Fast.png';
+import Nu from "../Pictures/Nust.png";
+import bahria from '../Pictures/Bahria.png';
+import lums from '../Pictures/Lums.png';
+import nust from '../Pictures/Nust.png';
+import { FaClipboardList, FaFileAlt, FaBook } from 'react-icons/fa';
 
 const Companydashboard = () => {
     const [activeSection, setActiveSection] = useState('dashboard');
@@ -35,10 +35,10 @@ const Companydashboard = () => {
         <>
             <div className="sidebar-new" style={{position:"fixed"}}>
                 <div className="app-name-new">
-                    <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/'>MockBot</Link>
+                    MockBot
                 </div>
 
-                <Link to="/Userprofile" style={{ textDecoration: 'none', color: 'inherit' }}>
+                
                     <div className="profile-section-new">
                         <div className="profile-icon-new">M</div>
                         <div className="profile-info-new">
@@ -46,13 +46,18 @@ const Companydashboard = () => {
                             <div className="profile-plan-new">Manage Account (Free Plan)</div>
                         </div>
                     </div>
-                </Link>
+              
 
                 <ul className="menu-new">
                     <li className="menu-item-new" onClick={() => handleSectionChange('dashboard')}><FaClipboardList style={{ marginRight: "10px" }} />Dashboard</li>
                     <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/question-vault'>
                         <li className="menu-item-new" onClick={() => handleSectionChange('interviewPreparation')}>
                         <FaBook style={{ marginRight: "10px" }} />Question Vault
+                        </li>
+                    </Link>
+                    <Link style={{ textDecoration: 'none', color: 'inherit' }} to='/'>
+                        <li className="menu-item-new" >
+                        <FaFileAlt style={{ marginRight: "10px" }} />Logout
                         </li>
                     </Link>
                 </ul>

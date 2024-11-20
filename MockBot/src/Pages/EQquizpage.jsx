@@ -12,7 +12,7 @@ const questions = [
     options: ["Strongly disagree", "Disagree", "Nuetral", "Agree", "Strongly Agree"],
     
   },
-  /*{
+  {
     questionText: "I expect that I will do well on most things I try.",
     options: ["Strongly disagree", "Disagree", "Nuetral", "Agree", "Strongly Agree"],
 
@@ -165,7 +165,7 @@ const questions = [
     questionText: "It is difficult for me to understand why people feel the way they do.",
     options: ["Strongly disagree", "Disagree", "Nuetral", "Agree", "Strongly Agree"],
     
-  }*/
+  }
 ];
 
 function IQquizpage() {

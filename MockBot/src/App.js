@@ -15,8 +15,10 @@ import CompanyRegistration from './Pages/CompanyRegistration';
 import Userprofile from './Components/Userprofile';
 import StudentRanking from './Components/StudentRanking';
 import Technicalmcqs from "./Pages/TechnicalMcqs";
-import Technical from "./Pages/TechnicalScreen";
 import TechnicalScreen from './Pages/TechnicalScreen';
+import Technicalinstrunction from './Instrunctionpages/Technicalinstrunction';
+import Iqinstrunction from './Instrunctionpages/Iqinstrunctions';
+import Eqinstrunction from './Instrunctionpages/Eqinstrunction';
 
 function App() {
   return (
@@ -41,6 +43,9 @@ function App() {
         <Route path="/userprofile" element={<Userprofile />} />
         <Route path="/Technical" element={<TechnicalScreen />} />
         <Route path="/TechnicalMcqs" element={<Technicalmcqs />} />
+        <Route path='/eqinstrunction' element={<Eqinstrunction/>}/>
+          <Route path='/iqinstrunction' element={<Iqinstrunction/>}/>
+          <Route path='/technicalinstrunction' element={<Technicalinstrunction/>}/>
         </Routes>
       </Router>
     </div>

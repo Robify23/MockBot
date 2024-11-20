@@ -3,16 +3,16 @@ import { useParams, useNavigate } from "react-router-dom";
 import "./StudentRanking.css";
 
 const students = [
-    { name: "John Doe", score: 12500, email: "john.doe@example.com", field: "Software Development" },
-    { name: "Jane Smith", score: 10900, email: "jane.smith@example.com", field: "Data Science" },
-    { name: "Alice Johnson", score: 9300, email: "alice.johnson@example.com", field: "Cybersecurity" },
-    { name: "Robert Brown", score: 8700, email: "robert.brown@example.com", field: "Cloud Computing" },
-    { name: "Emily Davis", score: 6900, email: "emily.davis@example.com", field: "AI & Machine Learning" },
-    { name: "Michael Wilson", score: 5300, email: "michael.wilson@example.com", field: "Networking" },
-    { name: "Sophia Taylor", score: 4100, email: "sophia.taylor@example.com", field: "UI/UX Design" },
-    { name: "Liam Anderson", score: 3700, email: "liam.anderson@example.com", field: "DevOps" },
-    { name: "Isabella Thomas", score: 2200, email: "isabella.thomas@example.com", field: "Database Management" },
-    { name: "Oliver Jackson", score: 1400, email: "oliver.jackson@example.com", field: "QA Testing" },
+    { name: "John Doe", score: { obtained: 190, total: 200 }, email: "john.doe@example.com", field: "Software Development" },
+    { name: "Jane Smith", score: { obtained: 180, total: 200 }, email: "jane.smith@example.com", field: "Data Science" },
+    { name: "Alice Johnson", score: { obtained: 170, total: 200 }, email: "alice.johnson@example.com", field: "Cybersecurity" },
+    { name: "Robert Brown", score: { obtained: 160, total: 200 }, email: "robert.brown@example.com", field: "Cloud Computing" },
+    { name: "Emily Davis", score: { obtained: 150, total: 200 }, email: "emily.davis@example.com", field: "AI & Machine Learning" },
+    { name: "Michael Wilson", score: { obtained: 140, total: 200 }, email: "michael.wilson@example.com", field: "Networking" },
+    { name: "Sophia Taylor", score: { obtained: 130, total: 200 }, email: "sophia.taylor@example.com", field: "UI/UX Design" },
+    { name: "Liam Anderson", score: { obtained: 120, total: 200 }, email: "liam.anderson@example.com", field: "DevOps" },
+    { name: "Isabella Thomas", score: { obtained: 100, total: 200 }, email: "isabella.thomas@example.com", field: "Database Management" },
+    { name: "Oliver Jackson", score: { obtained: 90, total: 200 }, email: "oliver.jackson@example.com", field: "QA Testing" },
 ];
 
 const universities = [
@@ -65,7 +65,7 @@ const StudentRanking = () => {
                             <tr key={index}>
                                 <td>{index + 1}</td>
                                 <td>{student.name}</td>
-                                <td>{student.score}</td>
+                                <td>{`${student.score.obtained}/${student.score.total}`}</td>
                                 <td>
                                     <a href={`mailto:${student.email}`} className="email-link">
                                         {student.email}

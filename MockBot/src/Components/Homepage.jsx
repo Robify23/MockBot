@@ -35,7 +35,7 @@ function App() {
         </div>
         <div className="login-section">
           <button className="signup-btn" ><Link style={{ textDecoration: 'none', color: 'inherit' }} to='/selection'>Signup</Link></button>
-          <button className="login-btn"><Link style={{ textDecoration: 'none', color: 'inherit' }} to='/signup'>Login</Link></button>
+          <button className="login-btn"><Link style={{ textDecoration: 'none', color: 'inherit' }} to='/selection'>Login</Link></button>
         </div>
       </header>
 

@@ -7,7 +7,6 @@ import IQ from '../Pictures/development (1).png';
 import Emotional from "../Pictures/emotional-intelligence (1).png";
 import PDF from '../Pictures/pdf.png';
 import ATS from '../Pictures/version.png';
-import extra from '../Pictures/emotional-intelligence.png';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 
@@ -17,7 +16,7 @@ const Userpage = () => {
     const [userInfo, setUserInfo] = useState({
         username: '',
       });
-      const [isEditing, setIsEditing] = useState(false);
+     
   const [loading, setLoading] = useState(false);
 
   const token = localStorage.getItem('token'); 
@@ -106,19 +105,19 @@ const Userpage = () => {
                         icon={techpic}
                         title="Technical Test"
                         description="Ace your interview with AI-generated quizzes and flaunt your scores to land a job!"
-                        path='/Technical'
+                        path='/technicalinstrunction'
                     />
                     <Card 
                         icon={IQ}
                         title="IQ Test"
                         description="Test Your Smarts: How High Can You Score?"
-                        path='/iqquiz'
+                        path='/iqinstrunction'
                     />
                     <Card 
                         icon={Emotional}
                         title="EQ Test"
                         description="Empathy Is Key: What’s Your Emotional Quotient?"
-                        path='/eqquiz'
+                        path='/eqinstrunction'
                     />
                     <Card 
                         icon={PDF}
@@ -142,19 +141,19 @@ const Userpage = () => {
                         icon={techpic}
                         title="Technical Test"
                         description="Ace your interview with AI-generated quizzes and flaunt your scores to land a job!"
-                        path='/Technical'
+                        path='/technicalinstrunction'
                     />
                     <Card 
                         icon={IQ}
                         title="IQ Test"
                         description="Test Your Smarts: How High Can You Score?"
-                        path='/iqquiz'
+                        path='/iqinstrunction'
                     />
                     <Card 
                         icon={Emotional}
                         title="EQ Test"
                         description="Empathy Is Key: What’s Your Emotional Quotient?"
-                        path='/eqquiz'
+                        path='/eqinstrunction'
                     />
                 </div>
             )}
